@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Movie Details</title>
+
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: center;
+        }
+
+        th {
+            background-color: lightgray;
+        }
+
+        img {
+            width: 70px;
+            height: 90px;
+        }
+    </style>
+</head>
+
+<body>
+
+<h2>Movie Details</h2>
+
+<button onclick="loadMovies()">Load Movies</button>
+
+<br><br>
+
+<table id="movieTable">
+
+    <tr>
+        <th>ID</th>
+        <th>Title</th>
+        <th>Poster</th>
+        <th>Year</th>
+        <th>Genre</th>
+        <th>Rating</th>
+        <th>Director</th>
+        <th>Country</th>
+        <th>Language</th>
+        <th>Actors</th>
+    </tr>
+
+</table>
+
+
+<script>
+
+function loadMovies() {
+
+    var xhttp = new XMLHttpRequest();
+
+    xhttp.onreadystatechange = function() {
+
+        if (this.readyState == 4 && this.status == 200) {
+
+            var movies = JSON.parse(this.responseText);
+
+            var table = document.getElementById("movieTable");
+
+            movies.forEach(function(movie) {
+
+                var row = table.insertRow();
+
+                row.insertCell(0).innerHTML = movie.id;
+
+                row.insertCell(1).innerHTML = movie.title;
+
+                row.insertCell(2).innerHTML =
+                    "<img src='" + movie.poster + "'>";
+
+                row.insertCell(3).innerHTML = movie.year;
+
+                row.insertCell(4).innerHTML = movie.genre;
+
+                row.insertCell(5).innerHTML = movie.rating;
+
+                row.insertCell(6).innerHTML = movie.director;
+
+                row.insertCell(7).innerHTML = movie.country;
+
+                row.insertCell(8).innerHTML = movie.language;
+
+                row.insertCell(9).innerHTML = movie.actors;
+
+            });
+        }
+    };
+
+    xhttp.open(
+        "GET",
+        "https://freetestapi.com/api/v1/movies",
+        true
+    );
+
+    xhttp.send();
+}
+
+</script>
+
+</body>
+</html>

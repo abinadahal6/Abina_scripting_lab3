@@ -1,0 +1,27 @@
+[
+  {
+
+    "id": 1,
+    "title": "Inception",
+    "poster": "https://via.placeholder.com/80",
+    "year": 2010,
+    "genre": "Sci-Fi",
+    "rating": 8.8,
+    "director": "Christopher Nolan",
+    "country": "USA",
+    "language": "English",
+    "actors": "Leonardo DiCaprio"
+  },
+  {
+    "id": 2,
+    "title": "The Dark Knight",
+    "poster": "https://via.placeholder.com/80",
+    "year": 2008,
+    "genre": "Action",
+    "rating": 9.0,
+    "director": "Christopher Nolan",
+    "country": "USA",
+    "language": "English",
+    "actors": "Christian Bale"
+  }
+]

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>BCA Description</title>
+</head>
+
+<body>
+
+    <h2>BCA Description</h2>
+
+    <button onclick="loadBCA()">Display BCA Content</button>
+
+    <p id="content"></p>
+
+    <script>
+
+        function loadBCA() {
+
+            // Create XMLHttpRequest object
+            var xhttp = new XMLHttpRequest();
+
+            // Check response
+            xhttp.onreadystatechange = function() {
+
+                if (this.readyState == 4 && this.status == 200) {
+
+                    document.getElementById("content").innerHTML =
+                    this.responseText;
+                }
+            };
+
+            // Request bca.txt file
+            xhttp.open("GET", "bca.txt", true);
+
+            // Send request
+            xhttp.send();
+        }
+
+    </script>
+
+</body>
+</html>

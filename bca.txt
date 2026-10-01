@@ -1,0 +1,5 @@
+BCA stands for Bachelor of Computer Application. It is a
+four-year undergraduate program related to computer science
+and information technology. BCA provides knowledge of
+programming, database management, web technology, software
+engineering, operating systems and computer applications.

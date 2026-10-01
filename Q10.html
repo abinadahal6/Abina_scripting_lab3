@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AJAX Login</title>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+
+<body>
+
+<h2>Login</h2>
+
+<div id="loginBox">
+
+    Username:
+    <input type="text" id="username">
+    <br><br>
+
+    Password:
+    <input type="password" id="password">
+    <br><br>
+
+    <button id="login">Login</button>
+
+</div>
+
+<p id="message"></p>
+
+
+<script>
+
+$("#login").click(function() {
+
+    $.ajax({
+
+        url: "Q10.php",
+
+        type: "POST",
+
+        data: {
+            username: $("#username").val(),
+            password: $("#password").val()
+        },
+
+        success: function(response) {
+
+            if (response == "success") {
+
+                $("#message").html("Welcome! Login successful.");
+
+                $("#loginBox").hide();
+
+            }
+            else {
+
+                $("#message").html("Invalid username or password. Try again.");
+
+            }
+
+        }
+
+    });
+
+});
+
+</script>
+
+</body>
+</html>
